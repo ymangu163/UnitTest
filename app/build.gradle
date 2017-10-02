@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.ymangu.unit"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode getVersionCode(true)
+        versionName getVersionName(true)
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+
+//通过tag 自动命名VersionName
+def getVersionName(boolean debug) {
+    def cmd = 'git for-each-ref  --sort=-taggerdate --format=\'%(refname)\' --count=1'
+    def version = cmd.execute().text.trim()
+
+    def index = version.lastIndexOf("/")
+    if (index > 0) {
+        version = version.substring(index + 1, version.length() - 1)
+    }
+    println("version = " + version.toString())
+    return version
+}
+
+// 获取修订版本 git 提交次数
+static def getRevisionNumber() {
+    Process process = "git rev-list --count HEAD".execute()
+    process.waitFor()
+    return process.getText().toInteger()
+}
+
+// 获取 version code
+static def getVersionCode(boolean isDebug) {
+    if (isDebug) {
+        return Integer.parseInt(new Date().format("yyyyMMddHH"))
+    }
+    return getRevisionNumber()
+}
