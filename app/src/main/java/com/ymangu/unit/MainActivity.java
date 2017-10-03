@@ -3,6 +3,7 @@ package com.ymangu.unit;
 import android.content.Intent;
 
 import com.common.activity.RecycleActivity;
+import com.ymangu.unit.section1.activity.InstrumentationActivity;
 
 import java.util.Arrays;
 
@@ -15,7 +16,7 @@ public class MainActivity extends RecycleActivity {
 //                intent = new Intent(this, FacebookActivity.class);
                 break;
             case 1:
-//                intent = new Intent(this, EncloseActivity.class);
+                intent = new Intent(this, InstrumentationActivity.class);
                 break;
             case 2:
 //                intent = new Intent(this, CustomActivity.class);

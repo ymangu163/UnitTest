@@ -1,11 +1,25 @@
 <resources>
     <string name="app_name">UnitTest</string>
 
+    <string name="label_click_me">hello world</string>
+    <string name="click_fun">Instrumentation demo test</string>
+
+    <string name="launch_next">Launch Activity</string>
+    <string name="next_activity">Next Activity</string>
+
+    <string name="sender_activity">Sender Activity</string>
+    <string name="receiver_activity">Receiver Activity</string>
+
+    <string name="info_text">imooc Android Automation Testing</string>
+    <string name="label_launch_next">Launch Next</string>
+    <string name="label_send_message">Send</string>
+    <string name="message_input_hint_edit_text">Enter a message</string>
+
+
 
     <array name="main">
-        <item>Monkey使用</item>
         <item>MonkeyRunner</item>
-        <item>Custom View</item>
+        <item>Instrumentation</item>
         <item>Frame 实践</item>
 
     </array>
