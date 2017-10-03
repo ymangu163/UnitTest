@@ -1,0 +1,19 @@
+# Start of Script
+type= user
+count= 1
+speed= 1.0
+start data >>
+LaunchActivity(com.miui.calculator, com.miui.calculator.Calculator)
+
+DispatchPress(KEYCODE_3)
+UserWait(200)
+DispatchPress(KEYCODE_2)
+UserWait(200)
+DispatchPress(KEYCODE_PLUS)
+UserWait(200)
+DispatchPress(KEYCODE_9)
+UserWait(200)
+DispatchPress(KEYCODE_2)
+UserWait(200)
+DispatchPress(KEYCODE_EQUALS)
+UserWait(200)

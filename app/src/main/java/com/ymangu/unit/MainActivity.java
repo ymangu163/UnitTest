@@ -1,13 +1,43 @@
 package com.ymangu.unit;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.Intent;
 
-public class MainActivity extends AppCompatActivity {
+import com.common.activity.RecycleActivity;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+import java.util.Arrays;
+
+public class MainActivity extends RecycleActivity {
+
+     protected void handleClick(int position) {
+        Intent intent = null;
+        switch (position) {
+            case 0:
+//                intent = new Intent(this, FacebookActivity.class);
+                break;
+            case 1:
+//                intent = new Intent(this, EncloseActivity.class);
+                break;
+            case 2:
+//                intent = new Intent(this, CustomActivity.class);
+                break;
+            case 3:
+//                intent = new Intent(this, FrameActivity.class);
+                break;
+        }
+
+        if (intent != null) {
+            startActivity(intent);
+        }
+
     }
+
+     public void initData() {
+        String[] array = getResources().getStringArray(R.array.main);
+        mDatas = Arrays.asList(array);
+        mAdapter.setDatas(mDatas);
+    }
+
+
+
+
 }

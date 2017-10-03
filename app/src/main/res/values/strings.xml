@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">UnitTest</string>
+
+
+    <array name="main">
+        <item>Monkey使用</item>
+        <item>MonkeyRunner</item>
+        <item>Custom View</item>
+        <item>Frame 实践</item>
+
+    </array>
+
 </resources>
