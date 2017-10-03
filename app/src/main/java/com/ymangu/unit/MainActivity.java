@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import com.common.activity.RecycleActivity;
 import com.ymangu.unit.section1.activity.InstrumentationActivity;
+import com.ymangu.unit.section1.activity.RobotiumActivity;
 
 import java.util.Arrays;
 
@@ -13,10 +14,10 @@ public class MainActivity extends RecycleActivity {
         Intent intent = null;
         switch (position) {
             case 0:
-//                intent = new Intent(this, FacebookActivity.class);
+                intent = new Intent(this, InstrumentationActivity.class);
                 break;
             case 1:
-                intent = new Intent(this, InstrumentationActivity.class);
+                intent = new Intent(this, RobotiumActivity.class);
                 break;
             case 2:
 //                intent = new Intent(this, CustomActivity.class);

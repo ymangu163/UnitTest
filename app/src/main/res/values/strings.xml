@@ -18,9 +18,8 @@
 
 
     <array name="main">
-        <item>MonkeyRunner</item>
         <item>Instrumentation</item>
-        <item>Frame 实践</item>
+        <item>Robotium</item>
 
     </array>
 
